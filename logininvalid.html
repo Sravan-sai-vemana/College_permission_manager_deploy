@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            body{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                background-image: url('https://cdn.glitch.global/88c0d60c-af6a-4de5-8450-a44a8147a2d1/logo.bmp?v=1697525615557');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 40%;
+                position: relative;
+                font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+            }
+            body::after{
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background-color: rgba(0, 0, 0, 0.3);
+             
+                z-index: -10;
+                
+            }
+            .main{
+                display: flex;
+                gap: 20px;
+                z-index: 100;
+            }
+
+            .main .left, .main .right{
+                background-color: rgba(255, 255, 255, 0.173);
+                backdrop-filter: blur(10px);
+                padding: 10px 30px;
+                padding-bottom: 30px;
+                border-radius: 3px;
+
+            }
+            .H{
+                font-weight: 600;
+                margin-bottom: 20px;
+               
+                    
+            }
+            .lab{
+                font-size: 12px;
+            }
+            input{
+                padding: 8px 10px;
+                margin: 2px;
+                border: none;
+                outline: none;
+                border-radius: 3px;
+                background-color: rgba(255, 255, 255, 0.564);
+            }
+            input:hover{
+                background-color: white;
+            }
+            input::placeholder{
+                font-size: 10px;
+                color: rgba(128, 128, 128);
+            }
+            button{
+                padding: 5px 24px;
+                border: none;
+                border-radius: 3px;
+                margin-top: 8px;
+                background-color:rgba(255, 255, 255, 0.564) ;
+            }
+            button:hover{
+                background-color:  white;
+                cursor: pointer;
+            }
+
+        </style>
+    </head>
+    <body>
+        <br>
+        <center>
+        <div class="main" id="home">
+        <div class="left">
+            <center>
+                <form action="/hodloginsubmit" method="post">
+                    <table>
+                        <tr>
+                            <td colspan="2">
+                                <center><p class="H">HOD LOGIN</p></center>
+                            </td>
+                        </tr>
+                        <tr>
+                            
+                            <td>
+                                <input type="text" name="inuser" placeholder="Username" required>
+                            </td>
+                        </tr>
+                        <tr>
+                           
+                            <td>
+                                <input type="password" name="inpass" placeholder="Password" required>
+                            </td>
+                        </tr>
+                        <br>
+                        <tr>
+                            <td colspan="2">
+                                <center>
+                                    <button id="sb" type="submit" >Login</button>
+                                </center>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </center>
+        </div>
+        <div class="right">
+            <center>
+                <form action="/studentloginsubmit" method="post">
+                    <table>
+                        <tr>
+                            <td colspan="2">
+                                <center><p class="H">STUDENT LOGIN</p></center>
+                            </td>
+                        </tr>
+                        <tr>
+                            
+                            <td>
+                                <input type="text" name="inuser" placeholder="Username" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            
+                            <td>
+                                <input type="password" name="inpass" placeholder="Password" required>
+                            </td>
+                        </tr>
+                        <br>
+                        <tr>
+                            <td style="display: flex;gap: 20px;">   
+                                    <button id="sb" type="submit" >Login</button></form>
+                                    <form action="/studentsignup"><button id="sb" type="submit" >Signup</button></form>
+                            </td>
+                        </tr>
+                </table>
+            </center>
+        </div>
+    </div>
+    </center>
+    </body>
+    <script>
+        window.alert("Invalid Credentials");
+    </script>
+</html>
+
+
