@@ -285,7 +285,10 @@ app.get("/send_message", (req, res) => {
 
 app.get("/approvals", async (req, res) => {
   const log = await db.collection("StudentLogin").where("username" , "==" , req.query.inuser).get();
-  var branch = log[0].data().branch;
+  log.forEach((logs)=>{
+    
+ 
+  var branch = logs.data().branch;
   console.log(branch);
   db.collection("HOD-"+branch)
     .where("regno", "==", req.query.inuser)
@@ -349,6 +352,7 @@ app.get("/approvals", async (req, res) => {
         '</body><script type="text/javascript"> function printDiv(divName) { var printContents = document.getElementById(divName).innerHTML; w=window.open(); w.document.write(printContents); w.print(); w.close(); } </script> </html>';
       res.send(temp);
     });
+     })
 });
 
 app.post("/HODloginsubmit", (req, res) => {
