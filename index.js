@@ -284,8 +284,9 @@ app.get("/send_message", (req, res) => {
 });
 
 app.get("/approvals", async (req, res) => {
-  var log = await db.collection("StudentLogin").where("username" , "==" , req.query.inuser).get();
+  const log = await db.collection("StudentLogin").where("username" , "==" , req.query.inuser).get();
   var branch = log[0].branch;
+  console.log(branch);
   db.collection("HOD-"+branch)
     .where("regno", "==", req.query.inuser)
     .get()
